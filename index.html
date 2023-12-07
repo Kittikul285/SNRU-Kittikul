@@ -279,10 +279,11 @@
    </section> <!-- Resume Section End-->
 <!-- JAVA======================================================================= -->
 <section id="java">
-   <div class="row">
+   
+   <div class="row work">
       <p>JAVA</p>
    </div>
-
+   
 </section>
 <!-- END JAVA======================================================================= -->
   <!-- API======================================================================= -->
@@ -351,6 +352,35 @@
 
 </script>
 
+
+<script>
+   function fetchRandomDog() {
+   // Fetch data from the API
+   fetch('https://random.dog/woof.json')
+   .then(response => response.json())
+   .then(data => {
+   const url = data.url;
+   
+   // Update the image source with the fetched URL
+   document.getElementById('dogImage').src = url;
+   
+   // Display the image
+   document.getElementById('dogImage').style.display = 'block';
+   })
+   .catch(error => {
+   console.error('Error fetching random dog:', error);
+   });
+   }
+   </script>
+   
+   
+   
+   <h1>Random Dog Image</h1>
+   <button onclick="fetchRandomDog()">Get Random Dog</button>
+   <img id="dogImage" width="400" height="300" src="" alt="Random Dog" style="display:none;">
+</script>
+
+<br><br>
 <form method="POST"action="https://script.google.com/macros/s/AKfycbxu1DYvlviQcURdXOUbQCOvzouvIIhSydUhbISjigY1L1ctl-K6NG10jiaUbfDsKf8w/exec">
    <input name="Email" type="email" placeholder="Email" required>
    <input name="Name" type="text" placeholder="Name" required>
@@ -358,9 +388,9 @@
    <button type="submit">Send</button>
 </form>
    
-   
-   </div>
 
+   </div>
+<br><br>
 </section>
 <!-- END API======================================================================= -->
 
